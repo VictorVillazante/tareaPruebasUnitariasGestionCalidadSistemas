@@ -12,6 +12,11 @@ public class AscensorTest {
         assertEquals(1, ascensorEdificio.getPosicionAscensor());
 
     }
+    @Test
+    public void verificarEstadoAscensorApertura(){
+        Ascensor ascensorEdificio=new Ascensor();
+        assertEquals("cerrado", ascensorEdificio.verificarAperturaAscensor());
 
+    }
 	
 }
