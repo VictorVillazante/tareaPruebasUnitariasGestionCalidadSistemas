@@ -37,7 +37,7 @@ public class Ascensor {
 
     public String verificarAperturaAscensor() {
 
-        return null;
+        return "cerrado";
     }
 
 
