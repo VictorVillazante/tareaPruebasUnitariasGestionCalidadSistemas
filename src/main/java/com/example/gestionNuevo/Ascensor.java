@@ -1,6 +1,6 @@
 package com.example.gestionNuevo;
 public class Ascensor {
-    private boolean[] ascensor=new boolean[]{true,false,false};
+    private boolean[] pisoOcupadoEdificio=new boolean[]{true,false,false};
     private int posicionAscensor;
 
     public int getPosicionAscensor() {
@@ -12,18 +12,19 @@ public class Ascensor {
     }
 
     public void comenzarDia() {
-        // cambiarPosicionAscensor(1);
-       posicionAscensor=0;
-
+        cambiarPosicionAscensor(1);
     }
 
-    // private void cambiarPosicionAscensor(int posicion) {
-    //     for(int i=0;i<3;i++){
-    //         if(i==posicion-1) posicionAscensor[i]=true;
-    //         else posicionAscensor[i]=false;
-    //     }
+    private void cambiarPosicionAscensor(int posicion) {
+        for(int i=0;i<3;i++){
+            if(i==posicion-1){
+                pisoOcupadoEdificio[i]=true;
+                setPosicionAscensor(posicion);
+            }
+            else pisoOcupadoEdificio[i]=false;
+        }
         
-    // }
+    }
 
 
 
