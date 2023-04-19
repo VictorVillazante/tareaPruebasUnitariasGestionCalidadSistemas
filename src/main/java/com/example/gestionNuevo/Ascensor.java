@@ -1,8 +1,12 @@
 package com.example.gestionNuevo;
 public class Ascensor {
-    private boolean[] pisoOcupadoEdificio=new boolean[]{true,false,false};
+    private boolean[] pisoLlamadaEdificio=new boolean[]{true,false,false};
     private int posicionAscensor;
+    private int pisoDestino;
     private boolean estadoAscensor;
+    private final int NUMERO_PISOS=3;
+    private final int PISO_INICIAL=1;
+    private int numeroPersonasDemandantesDeAscensor=0;
 
     public boolean getEstadoAscensor() {
         return estadoAscensor;
@@ -22,16 +26,16 @@ public class Ascensor {
 
     public void comenzarDia() {
         setEstadoAscensor(false);
-        cambiarPosicionAscensor(1);
+        cambiarPosicionAscensor(PISO_INICIAL);
     }
 
     private void cambiarPosicionAscensor(int posicion) {
         for(int i=0;i<3;i++){
             if(i==posicion-1){
-                pisoOcupadoEdificio[i]=true;
+                pisoLlamadaEdificio[i]=true;
                 setPosicionAscensor(posicion);
             }
-            else pisoOcupadoEdificio[i]=false;
+            else pisoLlamadaEdificio[i]=false;
         }
         
     }
@@ -42,8 +46,17 @@ public class Ascensor {
     }
 
     public void crearPersonaDemandeAscensorPiso() {
+        int posicionInicialPersona=(int) (Math.random()*NUMERO_PISOS+PISO_INICIAL);
+        int posicionDestinoPersona=posicionInicialPersona;
+        while(posicionInicialPersona==posicionDestinoPersona){
+            posicionDestinoPersona=(int) (Math.random()*NUMERO_PISOS+PISO_INICIAL);
+        }
+        numeroPersonasDemandantesDeAscensor++;
+        pisoDestino=posicionDestinoPersona;
+        posicionAscensor=posicionDestinoPersona;
+        numeroPersonasDemandantesDeAscensor--;
+        
     }
-    private int numeroPersonasDemandantesDeAscensor=0;
     public int getNumeroPersonasDemandantesDeAscensor() {
         return numeroPersonasDemandantesDeAscensor;
     }
