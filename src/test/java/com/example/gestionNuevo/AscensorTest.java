@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 public class AscensorTest {
     @Test
-    public void verificarAscensorPisoUno(){
+    public void verificarPisoAscensorApertura(){
         Ascensor ascensorEdificio=new Ascensor();
         ascensorEdificio.comenzarDia();
         assertEquals(1, ascensorEdificio.getPosicionAscensor());

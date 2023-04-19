@@ -13,7 +13,7 @@ public class Ascensor {
 
     public void comenzarDia() {
         // cambiarPosicionAscensor(1);
-       
+       posicionAscensor=0;
 
     }
 
