@@ -44,11 +44,5 @@ public class AscensorTest {
         ascensorEdificio.crearPersonaDemandeAscensorPiso();
         assertEquals("son pisos diferentes", ascensorEdificio.verificarQuePisoInicioNoSeaPisoDestino());
     }
-    // @Test
-    // public void verificarAtencionDiezPersonasPeticionAscensor(){
-    //     Ascensor ascensorEdificio=new Ascensor();
-    //     ascensorEdificio.comenzarDia();
-    //     ascensorEdificio.crearPersonaDemandeAscensorPiso();
-    //     assertEquals(0, ascensorEdificio.getNumeroPersonasDemandantesDeAscensor());
-    // }
+    
 }
