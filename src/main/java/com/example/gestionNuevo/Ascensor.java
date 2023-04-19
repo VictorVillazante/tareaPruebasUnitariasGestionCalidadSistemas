@@ -41,6 +41,13 @@ public class Ascensor {
         return "cerrado";
     }
 
+    public void crearPersonaDemandeAscensorPiso() {
+    }
+    private int numeroPersonasDemandantesDeAscensor=0;
+    public Object getNumeroPersonasDemandantesDeAscensor() {
+        return null;
+    }
+
 
 
 }

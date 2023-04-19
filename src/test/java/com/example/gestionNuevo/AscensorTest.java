@@ -16,7 +16,11 @@ public class AscensorTest {
     public void verificarEstadoAscensorApertura(){
         Ascensor ascensorEdificio=new Ascensor();
         assertEquals("cerrado", ascensorEdificio.verificarAperturaAscensor());
-
     }
-	
+	@Test
+    public void verificarAtencioneticionPersonaAscensor(){
+        Ascensor ascensorEdificio=new Ascensor();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        assertEquals(0, ascensorEdificio.getNumeroPersonasDemandantesDeAscensor());
+    }
 }
