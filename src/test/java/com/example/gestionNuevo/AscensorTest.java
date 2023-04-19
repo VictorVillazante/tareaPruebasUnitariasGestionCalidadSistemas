@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 public class AscensorTest {
+    @Rule
+	public ExpectedException exception = ExpectedException.none();
     @Test
     public void verificarPisoAscensorApertura(){
         Ascensor ascensorEdificio=new Ascensor();

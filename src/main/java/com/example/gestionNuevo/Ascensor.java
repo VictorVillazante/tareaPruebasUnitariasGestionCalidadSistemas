@@ -44,9 +44,9 @@ public class Ascensor {
         if(getEstadoAscensor()) return "abierto";
         return "cerrado";
     }
-
+    int posicionInicialPersona,posicionDestinoPersona;
     public void crearPersonaDemandeAscensorPiso() {
-        int posicionInicialPersona=(int) (Math.random()*NUMERO_PISOS)+PISO_INICIAL;
+        posicionInicialPersona=(int) (Math.random()*NUMERO_PISOS)+PISO_INICIAL;
         
         System.out.println("posicion inicial persona "+posicionInicialPersona);
         numeroPersonasDemandantesDeAscensor++;
@@ -56,7 +56,7 @@ public class Ascensor {
         setEstadoAscensor(true);
         System.out.println("Piso ascensor para recoger persona "+posicionAscensor);
         setEstadoAscensor(false);
-        int posicionDestinoPersona=posicionInicialPersona;
+        posicionDestinoPersona=posicionInicialPersona;
         while(posicionInicialPersona==posicionDestinoPersona){
             posicionDestinoPersona=(int) (Math.random()*NUMERO_PISOS)+PISO_INICIAL;
         }
@@ -74,6 +74,10 @@ public class Ascensor {
     }
 
     public String verificarQuePisoInicioNoSeaPisoDestino() {
+        if(posicionInicialPersona==posicionDestinoPersona){
+            new Exception("No puede ir al mismo piso");
+            return "no pueden ir al mismo piso";
+        }
         return "son pisos diferentes";
     }
 
