@@ -45,7 +45,7 @@ public class Ascensor {
     }
     private int numeroPersonasDemandantesDeAscensor=0;
     public Object getNumeroPersonasDemandantesDeAscensor() {
-        return null;
+        return 0;
     }
 
 
