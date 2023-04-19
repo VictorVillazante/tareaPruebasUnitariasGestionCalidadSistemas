@@ -46,14 +46,21 @@ public class Ascensor {
     }
 
     public void crearPersonaDemandeAscensorPiso() {
-        int posicionInicialPersona=(int) (Math.random()*NUMERO_PISOS+PISO_INICIAL);
+        int posicionInicialPersona=(int) (Math.random()*NUMERO_PISOS)+PISO_INICIAL;
         int posicionDestinoPersona=posicionInicialPersona;
         while(posicionInicialPersona==posicionDestinoPersona){
-            posicionDestinoPersona=(int) (Math.random()*NUMERO_PISOS+PISO_INICIAL);
+            posicionDestinoPersona=(int) (Math.random()*NUMERO_PISOS)+PISO_INICIAL;
         }
+        System.out.println("posicion inicial persona "+posicionInicialPersona);
+        System.out.println("posicion destino persona "+posicionDestinoPersona);
         numeroPersonasDemandantesDeAscensor++;
+        System.out.println("Piso ascensor inicial "+posicionAscensor);
+        pisoDestino=posicionInicialPersona;
+        posicionAscensor=pisoDestino;
+        System.out.println("Piso ascensor para recoger persona "+posicionAscensor);
         pisoDestino=posicionDestinoPersona;
-        posicionAscensor=posicionDestinoPersona;
+        posicionAscensor=pisoDestino;
+        System.out.println("Piso ascensor para dejar persona "+posicionAscensor);
         numeroPersonasDemandantesDeAscensor--;
         
     }
