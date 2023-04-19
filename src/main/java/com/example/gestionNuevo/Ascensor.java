@@ -74,7 +74,7 @@ public class Ascensor {
     }
 
     public String verificarQuePisoInicioNoSeaPisoDestino() {
-        return null;
+        return "son pisos diferentes";
     }
 
 
