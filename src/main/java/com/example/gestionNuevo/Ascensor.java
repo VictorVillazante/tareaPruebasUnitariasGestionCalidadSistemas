@@ -21,6 +21,7 @@ public class Ascensor {
     }
 
     public void comenzarDia() {
+        setEstadoAscensor(false);
         cambiarPosicionAscensor(1);
     }
 
@@ -36,7 +37,7 @@ public class Ascensor {
     }
 
     public String verificarAperturaAscensor() {
-
+        if(getEstadoAscensor()) return "abierto";
         return "cerrado";
     }
 
