@@ -23,7 +23,24 @@ public class AscensorTest {
         Ascensor ascensorEdificio=new Ascensor();
         ascensorEdificio.comenzarDia();
         ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+
         assertEquals(0, ascensorEdificio.getNumeroPersonasDemandantesDeAscensor());
+    }
+    @Test
+    public void verificarQueElPisoDestinoNoSeaMismoPisoInicial(){
+        Ascensor ascensorEdificio=new Ascensor();
+        ascensorEdificio.comenzarDia();
+        ascensorEdificio.crearPersonaDemandeAscensorPiso();
+        assertEquals("son pisos diferentes", ascensorEdificio.verificarQuePisoInicioNoSeaPisoDestino());
     }
     // @Test
     // public void verificarAtencionDiezPersonasPeticionAscensor(){
